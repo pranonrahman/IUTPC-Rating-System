@@ -156,14 +156,11 @@ def showAllStudentRanking(root):
     Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
 
 
-def addNewCon(root, name, url, plat, div, man):
+def verifyNewCon(root, name, url, plat, div, man):
+    root.destroy()
+    p = HudaiKhulaPage.getContestStatus(name, url, plat, div, man)
+    # adminWelcomePage(root)
 
-    adminWelcomePage(root)
-
-
-def verifyNewCon(root,  url, plat):
-    p = HudaiKhulaPage.getContestStatus(url, plat)
-    #adminWelcomePage(root)
 
 def addNewContest(root):
     root.destroy()
@@ -200,10 +197,9 @@ def addNewContest(root):
     Radiobutton(root, text='Yes', variable=man, value=0).place(x=120, y=370)
     Radiobutton(root, text='No 1', variable=man, value=1).place(x=120, y=390)
 
-    Button(root, text='Verify Contest', fg='red', bg='grey',
-           command=lambda: verifyNewCon(root, entry_2.get(), platform.get())).place(x=180,y=440)
-    Button(root, text='Submit', fg='red', bg='grey',
-           command=lambda: addNewCon(root, entry_1.get(), entry_2.get(), platform.get(), div.get(), man.get())).place(x=270,y=440)
+    Button(root, text='Fetch Result for Contest', fg='red', bg='grey',
+           command=lambda: verifyNewCon(root, entry_1.get(), entry_2.get(), platform.get(), div.get(),
+                                        man.get())).place(x=240, y=440)
 
 
 def adminWelcomePage(root):

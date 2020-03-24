@@ -2,7 +2,7 @@ import cx_Oracle as Cx
 from tkinter import *
 from adminhomepage import *
 from studenthomepage import *
-
+import  RatingFetcherFromCodeforces
 
 def doRegistration(root, sid, name, pwd, vj, cf):
     print(sid, name, pwd, vj, cf)
@@ -18,15 +18,20 @@ def doRegistration(root, sid, name, pwd, vj, cf):
         Label(new, text='Adding to database').place(x=80, y=50)
         stmt = 'insert into pending_req values(\'' + sid + '\',\'' + name + '\',\'' + pwd + '\',\'' + vj + '\',\'' + cf + '\')'
         print(stmt)
-        try:
-            cur.execute(stmt)
-        except Cx.IntegrityError:
-            Label(new, text='You already have a request pending, ask admin to solve it').place(x=80, y=50)
+        rating = RatingFetcherFromCodeforces.cfRating(cf)
+        if rating == -1:
+            Label(new, text='Provide CF Rating Properly').place(x=80, y=50)
             startpage(root)
         else:
-            conn.commit()
-            Label(new, text='Request Added, Wait for Approval').place(x=80, y=50)
-            startpage(root)
+            try:
+                cur.execute(stmt)
+            except Cx.IntegrityError:
+                Label(new, text='You already have a request pending, ask admin to solve it').place(x=80, y=50)
+                startpage(root)
+            else:
+                conn.commit()
+                Label(new, text='Request Added, Wait for Approval').place(x=80, y=50)
+                startpage(root)
     else:
         Label(new, text='Student ID is already registered').place(x=80, y=50)
 

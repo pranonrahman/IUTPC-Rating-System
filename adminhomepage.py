@@ -3,7 +3,7 @@ from tkinter.ttk import Treeview
 import cx_Oracle as Cx
 import welcomepage
 import RatingFetcherFromCodeforces
-import HudaiKhulaPage
+import VerifyAndAddContest
 
 
 def addAdmin(root, uid, uname, pwd):
@@ -158,7 +158,7 @@ def showAllStudentRanking(root):
 
 def verifyNewCon(root, name, url, plat, div, man):
     root.destroy()
-    p = HudaiKhulaPage.getContestStatus(name, url, plat, div, man)
+    p = VerifyAndAddContest.getContestStatus(name, url, plat, div, man)
     # adminWelcomePage(root)
 
 
@@ -201,6 +201,72 @@ def addNewContest(root):
            command=lambda: verifyNewCon(root, entry_1.get(), entry_2.get(), platform.get(), div.get(),
                                         man.get())).place(x=240, y=440)
 
+def showRanklist(root,cid):
+    root.destroy()
+    root = Tk()
+    root.geometry('1200x790')
+    root.title('Contest Ranklist')
+    Label(root, text='Contest Ranklist', fg='red', font=('bold', 20)).place(x=440, y=50)
+    tv = Treeview(root, columns=(1, 2, 3, 4), show="headings", height='20')
+    tv.heading(1, text='Position')
+    tv.heading(2, text='Student ID')
+    tv.heading(3, text='Solved')
+    tv.heading(4, text='Time Penalty')
+    conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+    cur = conn.cursor()
+    stmt = 'select userid, point_gained, time_penalty from ranklist where contest_id = \'' + cid + '\''
+    cur.execute(stmt)
+    rs = cur.fetchall()
+    curr = 1
+    ranklist = []
+    for row in rs:
+        un = row[0]
+        vj = row[1]
+        cf = row[2]
+        ranklist.append((curr,un,vj,cf))
+    ranklist.sort(key=lambda x:(x[2],-x[3]),reverse=True)
+    for item in ranklist:
+        un =item[1]
+        vj = item[2]
+        cf=item[3]
+        tv.insert("", "end", values=(curr, un, vj, cf))
+        curr+=1
+    tv.place(x=240, y=180)
+    Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
+
+    root.mainloop()
+
+
+def showPreviousContest(root):
+    root.destroy()
+    root = Tk()
+    root.geometry('1200x790')
+    root.title('Previous Contest')
+    Label(root, text='Previous Contest', fg='red', font=('bold', 20)).place(x=440, y=50)
+    entry1 = Entry(root, width=50)
+    b1 = Button(root, text='Show Ranklist', fg='red', width=20, command=lambda: showRanklist(root,entry1.get()))
+    entry1.place(x=250, y=140)
+    b1.place(x=550, y=140)
+    tv = Treeview(root, columns=(1, 2, 3), show="headings", height='20')
+    tv.heading(1, text='Contest ID')
+    tv.heading(2, text='Contest Name')
+    tv.heading(3, text='Contest URL')
+    conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+    cur = conn.cursor()
+    stmt = 'select contest_id,contest_name,contest_url from contest_info'
+    cur.execute(stmt)
+    rs = cur.fetchall()
+    curr = 1
+    for row in rs:
+        un = row[0]
+        vj = row[1]
+        cf = row[2]
+        tv.insert("", "end", values=(un,vj,cf))
+    tv.place(x=240, y=180)
+    Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
+
+    root.mainloop()
+
 
 def adminWelcomePage(root):
     root.destroy()
@@ -209,7 +275,7 @@ def adminWelcomePage(root):
     Label(root, text='Welcome to IUTPC Rating System', fg='red', font=('bold', 20)).place(x=440, y=50)
     Button(root, text='Add Contest', width=20, height=5, fg='red', borderwidth=3, command=lambda:
     addNewContest(root)).place(x=180, y=250)
-    Button(root, text='Previous Contest', width=20, height=5, fg='red', borderwidth=3).place(x=335, y=250)
+    Button(root, text='Previous Contest', width=20, height=5, fg='red', borderwidth=3,command=lambda :showPreviousContest(root)).place(x=335, y=250)
     Button(root, text='Student Ranking', width=20, height=5, fg='red', borderwidth=3,
            command=lambda: showAllStudentRanking(root)).place(x=490, y=250)
     Button(root, text='Pending Join Request', width=20, height=5, fg='red', borderwidth=3,

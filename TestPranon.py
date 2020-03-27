@@ -1,13 +1,7 @@
-dic = {
-    'pranon':170041014,
-    'hirok':170041034,
-    'masum':170041050
-}
 
-print(dic['pranon'])
 
-try:
-    x = dic['zadid']
-except KeyError:
-    x = 'not found'
-print(x)
+li = [(1, 'pranon'), (2,'afafaf'), (3, 'afaf')]
+
+li.sort(key=lambda x: x[0] , reverse=True)
+
+print(li)

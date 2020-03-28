@@ -54,6 +54,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="VerifyAndAddContest (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IUTPCRatingSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VerifyAndAddContest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="VerifyAndAddContest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,27 +138,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="vjudge" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IUTPCRatingSystem" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="G:/Codes/Project/Scraper/Vjudge" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="G:/Codes/Project/Scraper/Vjudge/vjudge.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="welcomepage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,10 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.adminhomepage" />
+        <item itemvalue="Python.VerifyAndAddContest (1)" />
         <item itemvalue="Python.VerifyAndAddContest" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.TestPranon" />
-        <item itemvalue="Python.vjudge" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +179,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -210,22 +215,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813601615" />
-    <state width="1630" height="276" key="GridCell.Tab.0.bottom" timestamp="1585342017649">
+    <state width="1630" height="248" key="GridCell.Tab.0.bottom" timestamp="1585383859596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585342017649" />
-    <state width="1630" height="276" key="GridCell.Tab.0.center" timestamp="1585342017649">
+    <state width="1630" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859596" />
+    <state width="1630" height="248" key="GridCell.Tab.0.center" timestamp="1585383859595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585342017649" />
-    <state width="1630" height="276" key="GridCell.Tab.0.left" timestamp="1585342017649">
+    <state width="1630" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859595" />
+    <state width="1630" height="248" key="GridCell.Tab.0.left" timestamp="1585383859595">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585342017649" />
-    <state width="1630" height="276" key="GridCell.Tab.0.right" timestamp="1585342017649">
+    <state width="1630" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859595" />
+    <state width="1630" height="248" key="GridCell.Tab.0.right" timestamp="1585383859596">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585342017649" />
+    <state width="1630" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859596" />
     <state width="790" height="333" key="GridCell.Tab.1.bottom" timestamp="1585332834130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

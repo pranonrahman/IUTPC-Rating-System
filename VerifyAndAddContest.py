@@ -90,7 +90,7 @@ def addToDatabase(root, finalRankList, name, url, plat, div, man, handleToStuden
         print(handle)
         sid = handleToStudentID[handle]
         insertRanklist = 'insert into ranklist values(\'' + cid + '\',\'' + sid + '\', ' + str(solved) + ' , ' + str(
-            time_pen) + ')'
+            time_pen) + ',' + str(item[5]) + ')'
         cur.execute(insertRanklist)
         updateRating = 'update current_rating set overall_rating = ' + str(rating) + ' where userid = \'' + sid + '\''
         print(updateRating)
@@ -111,12 +111,14 @@ def addToDatabase(root, finalRankList, name, url, plat, div, man, handleToStuden
     print('done')
     adminhomepage.adminWelcomePage(root)
 
+
 def AddToRankList(root, totalRanklist, name, url, plat, div, man, handleToStudentID):
     seed = []
     totalRanklist.sort(key=lambda x: (x[0], -x[1], -x[3]), reverse=True)
     pos = 1
     print(totalRanklist)
     newRanklist = []
+    changeRating = []
     for item in totalRanklist:
         if pos == pos:
             sid = generateSeed(root, totalRanklist, item, item[3])
@@ -134,13 +136,16 @@ def AddToRankList(root, totalRanklist, name, url, plat, div, man, handleToStuden
             change = (lo - item[3]) / 2
             if item[0] == 0 and item[1] == 0:
                 newRanklist.append(int(item[3] - abs(change)))
+                changeRating.append(int(-abs(change)))
             else:
                 newRanklist.append(int(item[3] + change))
+                changeRating.append(int(change))
         pos += 1
     print(newRanklist)
     new_item = []
     for i in range(0, len(totalRanklist)):
-        new_item.append((totalRanklist[i][2], i + 1, totalRanklist[i][0], totalRanklist[i][1], newRanklist[i]))
+        new_item.append(
+            (totalRanklist[i][2], i + 1, totalRanklist[i][0], totalRanklist[i][1], newRanklist[i], changeRating[i]))
 
     for item in new_item:
         print(item)

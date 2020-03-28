@@ -207,14 +207,16 @@ def showRanklist(root,cid):
     root.geometry('1200x790')
     root.title('Contest Ranklist')
     Label(root, text='Contest Ranklist', fg='red', font=('bold', 20)).place(x=440, y=50)
-    tv = Treeview(root, columns=(1, 2, 3, 4), show="headings", height='20')
+    tv = Treeview(root, columns=(1, 2, 3, 4,5), show="headings", height='20')
     tv.heading(1, text='Position')
     tv.heading(2, text='Student ID')
     tv.heading(3, text='Solved')
     tv.heading(4, text='Time Penalty')
+    tv.heading(5, text='Rating Change')
+
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
-    stmt = 'select userid, point_gained, time_penalty from ranklist where contest_id = \'' + cid + '\''
+    stmt = 'select userid, point_gained, time_penalty,change_rating  from ranklist where contest_id = \'' + cid + '\''
     cur.execute(stmt)
     rs = cur.fetchall()
     curr = 1
@@ -223,13 +225,15 @@ def showRanklist(root,cid):
         un = row[0]
         vj = row[1]
         cf = row[2]
-        ranklist.append((curr,un,vj,cf))
+        rj = row[3]
+        ranklist.append((curr,un,vj,cf,rj))
     ranklist.sort(key=lambda x:(x[2],-x[3]),reverse=True)
     for item in ranklist:
         un =item[1]
         vj = item[2]
         cf=item[3]
-        tv.insert("", "end", values=(curr, un, vj, cf))
+        rj = item[4]
+        tv.insert("", "end", values=(curr, un, vj, cf,rj))
         curr+=1
     tv.place(x=240, y=180)
     Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)

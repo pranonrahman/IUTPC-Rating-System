@@ -8,6 +8,7 @@ import math
 import adminhomepage
 import CFStandingFetcher
 
+
 def returnFunction(tup):
     (root, ret) = tup
     root.destroy()
@@ -76,7 +77,7 @@ def addToDatabase(root, finalRankList, name, url, plat, div, man, handleToStuden
         cur.execute(insertContest)
     except Cx.IntegrityError:
         print('error')
-    selectcid = 'select contest_id from contest_info where contest_name = \'' + name + '\' and contest_url = \'' + url + '\''
+    selectcid = 'select max(contest_id) from contest_info where contest_name = \'' + name + '\' and contest_url = \'' + url + '\''
     cur.execute(selectcid)
     rs = cur.fetchall()
     print(rs[0][0])
@@ -178,9 +179,110 @@ def getStudentId(handle, platform):
         return rs[0][0]
 
 
+def generateSeedCF(root, totalRanklist, item, rating):
+    sum = 0
+    for others in totalRanklist:
+        if others[2] == item[2]:
+            continue
+        else:
+            prob = 1 + pow(10, (-others[4] + rating) / 400)
+            sum = sum + (1 / prob)
+    sum += 1
+    return sum
+
+
+def addToDatabaseCF(root, finalRankList, changeRating, li, name, url, div, man):
+    conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+    cur = conn.cursor()
+    insertContest = 'insert into contest_info(contest_name,contest_url,platform_id,division,mandatory) values( \'' + name + '\',\'' + url + '\',\'' + 'codeforces' + '\', ' + str(
+        div) + ' , ' + str(man) + ')'
+    try:
+        cur.execute(insertContest)
+    except Cx.IntegrityError:
+        print('error')
+    selectcid = 'select max(contest_id) from contest_info where contest_name = \'' + name + '\' and contest_url = \'' + url + '\''
+    cur.execute(selectcid)
+    rs = cur.fetchall()
+    print(rs[0][0])
+    cid = rs[0][0]
+    poos=1
+    for item in li:
+        handle = item[0]
+        position = poos
+        solved = item[2]
+        time_pen = item[3]
+        rating = item[4] + changeRating[poos-1]
+        print(handle)
+        insertRanklist = 'insert into ranklist values(\'' + cid + '\',\'' + handle + '\', ' + str(solved) + ' , ' + str(
+            time_pen) + ',' + str(changeRating[poos-1]) + ')'
+        cur.execute(insertRanklist)
+        conn.commit()
+        updateRating = 'update current_rating set overall_rating = ' + str(rating) + ' where userid = \'' + handle + '\''
+        print(updateRating)
+        cur.execute(updateRating)
+        poos += 1
+        conn.commit()
+    print('done')
+    conn.commit()
+    print('done')
+    adminhomepage.adminWelcomePage(root)
+
+
+def addToRanklistForCF(root, li, name, url, div, man):
+    seed = []
+    pos = 1
+    print(li)
+    newRanklist = []
+    changeRating = []
+    for item in li:
+        if pos == pos:
+            sid = generateSeedCF(root, li, item, item[4])
+            m = (sid * pos) ** (0.5)
+            # print(sid, pos, m)
+            hi = 8000
+            lo = 1
+            while hi - lo > 1:
+                mid = (hi + lo) / 2
+                if generateSeedCF(root, li, item, mid) < m:
+                    hi = mid
+                else:
+                    lo = mid
+            # print(lo)
+            change = (lo - item[4]) / 2
+            if item[0] == 0 and item[1] == 0:
+                newRanklist.append(int(item[4] - abs(change)))
+                changeRating.append(int(-abs(change)))
+            else:
+                newRanklist.append(int(item[4] + change))
+                changeRating.append(int(change))
+        pos += 1
+    print(newRanklist)
+    addToDatabaseCF(root, newRanklist, changeRating, li, name, url, div, man)
+    return
+
+
 def getContestStatus(name, url, plat, div, man):
     if plat == 'codeforces':
         li = CFStandingFetcher.getStanding(url, name, div, man)
+        print(li)
+        root = Tk()
+        root.geometry('1200x790')
+        Label(root, text='Temporary Point Table', fg='red').place(x=500, y=70)
+        tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+        tv.heading(1, text='Position')
+        tv.heading(2, text='Student ID')
+        tv.heading(3, text='Handle')
+        tv.heading(4, text='Solved')
+        tv.heading(5, text='Time Penalty')
+        poos = 1
+        for item in li:
+            tv.insert("", "end", values=(poos, item[0], item[1], item[2], item[3]))
+            poos = poos + 1
+        tv.place(x=150, y=180)
+        Button(root, text='Create Ranking and Save', fg='red', bg='grey',
+               command=lambda: addToRanklistForCF(root, li, name, url, div, man)).place(x=270, y=740)
+        root.mainloop()
+
     else:
         li = vjudgeverify(url)
         print(li)

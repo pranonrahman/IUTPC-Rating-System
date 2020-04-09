@@ -2,7 +2,13 @@ import cx_Oracle as Cx
 from tkinter import *
 from adminhomepage import *
 from studenthomepage import *
-import  RatingFetcherFromCodeforces
+import RatingFetcherFromCodeforces
+
+
+def click(new):
+    new.destroy()
+    return
+
 
 def doRegistration(root, sid, name, pwd, vj, cf):
     print(sid, name, pwd, vj, cf)
@@ -11,29 +17,30 @@ def doRegistration(root, sid, name, pwd, vj, cf):
     stmt = 'select userid from user_info where userid= \'' + sid + '\''
     cur.execute(stmt)
     rs = cur.fetchall()
-    new = Tk()
-    new.geometry('600x400')
     root.resizable(FALSE, FALSE)
     if len(rs) == 0:
-        Label(new, text='Adding to database').place(x=80, y=50)
+        Label(root, text='Adding to database').place(x=240, y=420)
         stmt = 'insert into pending_req values(\'' + sid + '\',\'' + name + '\',\'' + pwd + '\',\'' + vj + '\',\'' + cf + '\')'
         print(stmt)
         rating = RatingFetcherFromCodeforces.cfRating(cf)
         if rating == -1:
-            Label(new, text='Provide CF Rating Properly').place(x=80, y=50)
+            Label(root, text='Provide CF Rating Properly').place(x=240, y=420)
+            new.destroy()
             startpage(root)
         else:
             try:
                 cur.execute(stmt)
             except Cx.IntegrityError:
-                Label(new, text='You already have a request pending, ask admin to solve it').place(x=80, y=50)
+                Label(root, text='You already have a request pending, ask admin to solve it').place(x=240, y=420)
+                new.destroy()
                 startpage(root)
             else:
                 conn.commit()
-                Label(new, text='Request Added, Wait for Approval').place(x=80, y=50)
+                Label(root, text='Request Added, Wait for Approval').place(x=240, y=420)
                 startpage(root)
     else:
-        Label(new, text='Student ID is already registered').place(x=80, y=50)
+        Label(root, text='Student ID is already registered').place(x=240, y=420)
+        startpage(root)
 
 
 def login(root, sid, pwd):
@@ -43,28 +50,35 @@ def login(root, sid, pwd):
     cur.execute(stmt)
     rs = cur.fetchall()
     new = Tk()
-    new.geometry('800x400')
+    new.geometry('400x400')
+    new.destroy()
     root.resizable(FALSE, FALSE)
     if len(rs) != 0:
         if rs[0][0] == pwd:
-            Label(new, text='Logged In').place(x=80, y=50)
-            if rs[0][1]==1:
+            Label(root, text='Logged In').place(x=80, y=50)
+            if rs[0][1] == 1:
                 adminWelcomePage(root)
             else:
-                studentWelcomePage(root,sid)
+                studentWelcomePage(root, sid)
 
         else:
-            Label(new, text='Weong Password').place(x=80, y=50)
+            neo = Tk()
+            neo.geometry('200x200')
+            Label(neo, text='Wrong Password').place(x=80, y=50)
+            Button(neo, text='Go Back', width=20, bg='brown', fg='white', command=lambda: click(neo)).place(x=80, y=90)
+            neo.mainloop()
             startpage(root)
     else:
         stmt = 'select password from pending_req where userid = \'' + sid + '\''
         cur.execute(stmt)
         rs = cur.fetchall()
         if len(rs) != 0:
-            Label(new, text='Your account needs approval, ask your admin').place(x=80, y=50)
+            Label(root, text='Your account needs approval, ask your admin').place(x=80, y=50)
+            root.destroy()
             startpage(root)
         else:
             Label(new, text='You are not registered, register first').place(x=80, y=50)
+            new.destroy()
             startpage(root)
     new.mainloop()
 
@@ -141,7 +155,8 @@ def startpage(root):
     root.resizable(FALSE, FALSE)
     frame = Frame(root).place(x=500, y=500)
     Label(root, text="Welcome to IUTPC Rating System", font=("bold", 16)).place(x=80, y=120)
-    Button(root, text='Register', width=20, bg='brown', fg='white', command=lambda: registration(root)).place(x=100, y=320)
+    Button(root, text='Register', width=20, bg='brown', fg='white', command=lambda: registration(root)).place(x=100,
+                                                                                                              y=320)
     Button(root, text='Login', width=20, bg='brown', fg='white', command=lambda: loginpage(root)).place(
         x=280, y=320)
     root.mainloop()
@@ -149,7 +164,7 @@ def startpage(root):
 
 # init welcome page
 if __name__ == "__main__":
-    root=Tk()
+    root = Tk()
     startpage(root)
 
 # registrationpage

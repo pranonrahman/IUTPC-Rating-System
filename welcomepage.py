@@ -51,7 +51,7 @@ def login(root, sid, pwd):
             if rs[0][1]==1:
                 adminWelcomePage(root)
             else:
-                studentWelcomePage(root)
+                studentWelcomePage(root,sid)
 
         else:
             Label(new, text='Weong Password').place(x=80, y=50)

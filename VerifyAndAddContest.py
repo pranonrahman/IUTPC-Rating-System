@@ -6,7 +6,7 @@ import cx_Oracle as Cx
 from tkinter.ttk import Treeview
 import math
 import adminhomepage
-
+import CFStandingFetcher
 
 def returnFunction(tup):
     (root, ret) = tup
@@ -180,7 +180,7 @@ def getStudentId(handle, platform):
 
 def getContestStatus(name, url, plat, div, man):
     if plat == 'codeforces':
-        print('hudai')
+        li = CFStandingFetcher.getStanding(url, name, div, man)
     else:
         li = vjudgeverify(url)
         print(li)

@@ -32,8 +32,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.adminhomepage">
-    <configuration name="TestPranon" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.CFStandingFetcher">
+    <configuration name="CFStandingFetcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +45,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestPranon.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CFStandingFetcher.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,11 +161,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.adminhomepage" />
+        <item itemvalue="Python.CFStandingFetcher" />
         <item itemvalue="Python.VerifyAndAddContest (1)" />
+        <item itemvalue="Python.adminhomepage" />
         <item itemvalue="Python.VerifyAndAddContest" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.TestPranon" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +183,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Failed" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
@@ -215,22 +215,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813601615" />
-    <state width="1630" height="248" key="GridCell.Tab.0.bottom" timestamp="1585383859596">
+    <state width="1630" height="247" key="GridCell.Tab.0.bottom" timestamp="1586449599330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="248" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859596" />
-    <state width="1630" height="248" key="GridCell.Tab.0.center" timestamp="1585383859595">
+    <state width="1630" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586449599330" />
+    <state width="1630" height="247" key="GridCell.Tab.0.center" timestamp="1586449599330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="248" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859595" />
-    <state width="1630" height="248" key="GridCell.Tab.0.left" timestamp="1585383859595">
+    <state width="1630" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586449599330" />
+    <state width="1630" height="247" key="GridCell.Tab.0.left" timestamp="1586449599330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="248" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859595" />
-    <state width="1630" height="248" key="GridCell.Tab.0.right" timestamp="1585383859596">
+    <state width="1630" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586449599330" />
+    <state width="1630" height="247" key="GridCell.Tab.0.right" timestamp="1586449599330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="248" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585383859596" />
+    <state width="1630" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586449599330" />
     <state width="790" height="333" key="GridCell.Tab.1.bottom" timestamp="1585332834130">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

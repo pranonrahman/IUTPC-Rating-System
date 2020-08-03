@@ -1,6 +1,7 @@
 import requests
 import bs4 as bs
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from tkinter import *
 import cx_Oracle as Cx
 from tkinter.ttk import Treeview
@@ -16,14 +17,15 @@ def returnFunction(tup):
 
 
 def vjudgeverify(url):
+    print(url)
     # root.mainloop()
-    driver = webdriver.Chrome("D:\\Setup Files\\chromedriver_win32\\chromedriver.exe")
-    driver.get(url)
+    driver = webdriver.Firefox(executable_path="D:\\Setup Files\\chromedriver_win32\\geckodriver.exe")
+    driver.get(url + '#rank')
     res = driver.execute_script("return document.documentElement.outerHTML;")
     soup = bs.BeautifulSoup(res, 'lxml')
     driver.quit()
     contest_table = soup.find('table', id='contest-rank-table')
-    cnt = 0;
+    cnt = 0
     li = {}
     for row in contest_table.find_all('tr'):
         handle = ''
@@ -35,8 +37,13 @@ def vjudgeverify(url):
             x = x.lstrip()
             x = x.rstrip()
             if cnt == 1:
-                handle = x.split()[0]
-                handle = handle.lower()
+                try:
+                    handle = x.split()[0]
+                    handle = handle.lower()
+                    print(handle)
+                except:
+                    continue
+                    
             elif cnt == 2:
                 solved = int(x)
             elif cnt == 3:

@@ -17,11 +17,13 @@
   <component name="ProjectId" id="1ZRt13Z6ckpjubE9siw2aFFuFPR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Github/Programming-Rating-Tracker" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -32,8 +34,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.welcomepage">
-    <configuration name="CFStandingFetcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="RatingFetcherFromCodeforces" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -45,7 +47,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CFStandingFetcher.py" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RatingFetcherFromCodeforces.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -54,7 +57,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="VerifyAndAddContest (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="VerifyAndAddContest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -66,28 +69,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VerifyAndAddContest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="adminhomepage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IUTPCRatingSystem" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminhomepage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,6 +91,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -129,7 +113,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/studenthomepage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="toph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IUTPCRatingSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/toph.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,6 +157,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/welcomepage.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -161,41 +169,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.studenthomepage" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.adminhomepage" />
-        <item itemvalue="Python.VerifyAndAddContest (1)" />
-        <item itemvalue="Python.CFStandingFetcher" />
+        <item itemvalue="Python.VerifyAndAddContest" />
+        <item itemvalue="Python.toph" />
+        <item itemvalue="Python.RatingFetcherFromCodeforces" />
+        <item itemvalue="Python.studenthomepage" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.12789416" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Python" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -207,53 +187,84 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584813516036</updated>
+      <workItem from="1591198105328" duration="41000" />
+      <workItem from="1591228084529" duration="72000" />
+      <workItem from="1594206497729" duration="913000" />
+      <workItem from="1595170153609" duration="33000" />
+      <workItem from="1595170287434" duration="418000" />
+      <workItem from="1595516778306" duration="1062000" />
+      <workItem from="1595518073847" duration="34000" />
+      <workItem from="1595527773134" duration="390000" />
+      <workItem from="1595586213790" duration="3846000" />
+      <workItem from="1595613500086" duration="1869000" />
+      <workItem from="1595618347118" duration="342000" />
+      <workItem from="1595618924327" duration="1292000" />
+      <workItem from="1596439109775" duration="522000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584813601615">
+    <state x="870" y="29" key="FileChooserDialogImpl" timestamp="1596439538114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="828" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584813601615" />
-    <state width="1630" height="247" key="GridCell.Tab.0.bottom" timestamp="1586465666083">
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595613722708" />
+    <state x="870" y="29" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439538114" />
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591228152364" />
+    <state width="1128" height="124" key="GridCell.Tab.0.bottom" timestamp="1596439194111">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state width="1611" height="200" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
+    <state width="1128" height="124" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
+    <state width="1128" height="124" key="GridCell.Tab.0.center" timestamp="1596439194111">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state width="1611" height="200" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
+    <state width="1128" height="124" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
+    <state width="1128" height="124" key="GridCell.Tab.0.left" timestamp="1596439194110">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state width="1611" height="200" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691119" />
+    <state width="1128" height="124" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194110" />
+    <state width="1611" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
+    <state width="1128" height="124" key="GridCell.Tab.0.right" timestamp="1596439194111">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state width="1611" height="200" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
+    <state width="1128" height="124" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
+    <state width="1611" height="200" key="GridCell.Tab.1.bottom" timestamp="1595618020994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586465666083" />
-    <state width="1630" height="247" key="GridCell.Tab.0.center" timestamp="1586465666083">
+    <state width="1611" height="200" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020994" />
+    <state width="1611" height="200" key="GridCell.Tab.1.center" timestamp="1595618020993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586465666083" />
-    <state width="1630" height="247" key="GridCell.Tab.0.left" timestamp="1586465666083">
+    <state width="1611" height="200" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020993" />
+    <state width="1611" height="200" key="GridCell.Tab.1.left" timestamp="1595618020993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586465666083" />
-    <state width="1630" height="247" key="GridCell.Tab.0.right" timestamp="1586465666083">
+    <state width="1611" height="200" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020993" />
+    <state width="1611" height="200" key="GridCell.Tab.1.right" timestamp="1595618020994">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586465666083" />
-    <state width="1630" height="247" key="GridCell.Tab.1.bottom" timestamp="1586465107852">
+    <state width="1611" height="200" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020994" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1591125565284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586465107852" />
-    <state width="1630" height="247" key="GridCell.Tab.1.center" timestamp="1586465107852">
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591125565284" />
+    <state x="623" y="225" key="search.everywhere.popup" timestamp="1595587042998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1630" height="247" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586465107852" />
-    <state width="1630" height="247" key="GridCell.Tab.1.left" timestamp="1586465107852">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1630" height="247" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586465107852" />
-    <state width="1630" height="247" key="GridCell.Tab.1.right" timestamp="1586465107852">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1630" height="247" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586465107852" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1584965049691">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584965049690" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585340988464">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585340988464" />
+    <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595587042998" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1596439186897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$toph.coverage" NAME="toph Coverage Results" MODIFIED="1595588564519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$VerifyAndAddContest.coverage" NAME="VerifyAndAddContest Coverage Results" MODIFIED="1595618428800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

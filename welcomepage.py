@@ -1,3 +1,5 @@
+from hashlib import new
+
 import cx_Oracle as Cx
 from tkinter import *
 from adminhomepage import *
@@ -9,7 +11,7 @@ def click(new):
     new.destroy()
     return
 
-
+#PRANON
 def doRegistration(root, sid, name, pwd, vj, cf):
     print(sid, name, pwd, vj, cf)
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
@@ -42,7 +44,7 @@ def doRegistration(root, sid, name, pwd, vj, cf):
         Label(root, text='Student ID is already registered').place(x=240, y=420)
         startpage(root)
 
-
+#RIZVI
 def login(root, sid, pwd):
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
@@ -82,7 +84,7 @@ def login(root, sid, pwd):
             startpage(root)
     new.mainloop()
 
-
+#RIZVI
 def registration(root):
     root.destroy()
     root = Tk()
@@ -120,7 +122,7 @@ def registration(root):
 
     root.mainloop()
 
-
+#RIZVI
 # margin left 50%
 # loginpage
 
@@ -145,7 +147,7 @@ def loginpage(root):
     Button(root, text='Go Back', width=20, bg='brown', fg='white', command=lambda: startpage(root)).place(x=270, y=380)
     root.mainloop()
 
-
+#RIZVI
 # welcome page
 def startpage(root):
     root.destroy()

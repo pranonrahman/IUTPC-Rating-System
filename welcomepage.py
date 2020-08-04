@@ -12,7 +12,7 @@ def click(new):
     return
 
 #PRANON
-def doRegistration(root, sid, name, pwd, vj, cf):
+def doRegistration(root, sid, name, pwd, vj, cf, toph):
     print(sid, name, pwd, vj, cf)
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
@@ -22,25 +22,24 @@ def doRegistration(root, sid, name, pwd, vj, cf):
     root.resizable(FALSE, FALSE)
     if len(rs) == 0:
         Label(root, text='Adding to database').place(x=240, y=420)
-        stmt = 'insert into pending_req values(\'' + sid + '\',\'' + name + '\',\'' + pwd + '\',\'' + vj + '\',\'' + cf + '\')'
+        stmt = 'insert into pending_req values(\'' + sid + '\',\'' + name + '\',\'' + pwd + '\',\'' + vj + '\',\'' + cf + '\' , \'' + toph + '\')'
         print(stmt)
         rating = RatingFetcherFromCodeforces.cfRating(cf)
         if rating == -1:
             Label(root, text='Provide CF Rating Properly').place(x=240, y=420)
-            new.destroy()
             startpage(root)
         else:
             try:
                 cur.execute(stmt)
             except Cx.IntegrityError:
                 Label(root, text='You already have a request pending, ask admin to solve it').place(x=240, y=420)
-                new.destroy()
                 startpage(root)
             else:
                 conn.commit()
                 Label(root, text='Request Added, Wait for Approval').place(x=240, y=420)
                 startpage(root)
     else:
+        print('already have this!')
         Label(root, text='Student ID is already registered').place(x=240, y=420)
         startpage(root)
 
@@ -113,16 +112,19 @@ def registration(root):
     label_5.place(x=68, y=330)
     entry_5 = Entry(root)
     entry_5.place(x=240, y=330)
+    label_6 = Label(root, text="Toph Handle", width=20, font=("bold", 10))
+    label_6.place(x=68, y=380)
+    entry_6 = Entry(root)
+    entry_6.place(x=240, y=380)
 
     Button(root, text='Submit', width=20, bg='brown', fg='white',
            command=lambda: doRegistration(root, entry_1.get(), entry_2.get(), entry_3.get(), entry_4.get(),
-                                          entry_5.get())).place(x=120, y=380)
+                                          entry_5.get(), entry_6.get())).place(x=120, y=430)
     Button(root, text='Go Back', width=20, bg='brown', fg='white', command=lambda: startpage(root)).place(x=280,
-                                                                                                          y=380)
+                                                                                                          y=430)
 
     root.mainloop()
 
-#RIZVI
 # margin left 50%
 # loginpage
 

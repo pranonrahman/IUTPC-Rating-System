@@ -8,6 +8,7 @@ from tkinter.ttk import Treeview
 import math
 import adminhomepage
 import CFStandingFetcher
+from TophStandingFetcher import *
 
 
 def returnFunction(tup):
@@ -43,7 +44,7 @@ def vjudgeverify(url):
                     print(handle)
                 except:
                     continue
-                    
+
             elif cnt == 2:
                 solved = int(x)
             elif cnt == 3:
@@ -212,19 +213,20 @@ def addToDatabaseCF(root, finalRankList, changeRating, li, name, url, div, man):
     rs = cur.fetchall()
     print(rs[0][0])
     cid = rs[0][0]
-    poos=1
+    poos = 1
     for item in li:
         handle = item[0]
         position = poos
         solved = item[2]
         time_pen = item[3]
-        rating = item[4] + changeRating[poos-1]
+        rating = item[4] + changeRating[poos - 1]
         print(handle)
         insertRanklist = 'insert into ranklist values(\'' + cid + '\',\'' + handle + '\', ' + str(solved) + ' , ' + str(
-            time_pen) + ',' + str(changeRating[poos-1]) + ')'
+            time_pen) + ',' + str(changeRating[poos - 1]) + ')'
         cur.execute(insertRanklist)
         conn.commit()
-        updateRating = 'update current_rating set overall_rating = ' + str(rating) + ' where userid = \'' + handle + '\''
+        updateRating = 'update current_rating set overall_rating = ' + str(
+            rating) + ' where userid = \'' + handle + '\''
         print(updateRating)
         cur.execute(updateRating)
         poos += 1
@@ -267,9 +269,135 @@ def addToRanklistForCF(root, li, name, url, div, man):
     addToDatabaseCF(root, newRanklist, changeRating, li, name, url, div, man)
     return
 
+def generateSeedTOPH(root, position, rating, currentrating):
+    sum = 0
+    for others in range(0,len(rating)):
+        if others == position:
+            continue
+        else:
+            prob = 1 + pow(10, (-rating[others] + currentrating) / 400)
+            sum = sum + (1 / prob)
+    sum += 1
+    return sum
 
-def getContestStatus(name, url, plat, div, man):
-    if plat == 'codeforces':
+def addToDatabaseTOPH(root, li,rating, changeRating, name, url, div, man):
+    conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+    cur = conn.cursor()
+    statement = 'insert into contest_info(contest_name,contest_url,platform_id,division,mandatory) values( \'' + name + '\',\'' + url + '\',\'' + 'toph' + '\', ' + str(
+        div) + ' , ' + str(man) + ')'
+    print(statement)
+    cur.execute(statement)
+    try:
+        cur.execute(statement)
+    except Cx.IntegrityError:
+        print('error')
+    selectcid = 'select max(contest_id) from contest_info where contest_name = \'' + name + '\' and contest_url = \'' + url + '\''
+    cur.execute(selectcid)
+    rs = cur.fetchall()
+    print(rs[0][0])
+    cid = rs[0][0]
+
+    poos = 1
+    for item in li:
+        handle = item[1]
+        position = item[0]
+        solved = item[2]
+        time_pen = item[3]
+        insertRanklist = 'insert into ranklist values(\'' + cid + '\',\'' + handle + '\', ' + str(solved) + ' , ' + str(
+            time_pen) + ',' + str(changeRating[poos - 1]) + ')'
+        cur.execute(insertRanklist)
+        conn.commit()
+        updateRating = 'update current_rating set overall_rating = ' + str(int(rating[poos-1]+changeRating[poos-1])) + ' where userid = \'' + handle + '\''
+        print(updateRating)
+        cur.execute(updateRating)
+        poos += 1
+        conn.commit()
+    adminhomepage.adminWelcomePage(root)
+
+
+def addToRanklistForTOPH(root,li,name,url,div,man):
+    rating = []
+    for items in li:
+        conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+        cur = conn.cursor()
+        statement = 'select overall_rating  from current_rating  where userid = \'' + items[1] + '\''
+        print(items[1])
+        cur.execute(statement)
+        rs = cur.fetchall()
+        rating.append(rs[0][0])
+        conn.close()
+    changeRating = []
+    pos = 1
+    for item in range(0,len(li)):
+        sid = generateSeedTOPH(root, pos, rating, rating[item])
+        m = (sid * pos) ** (0.5)
+        hi = 8000
+        lo = 1
+        while hi - lo > 1:
+            mid = (hi + lo) / 2
+            if generateSeedTOPH(root, pos, rating, mid) < m:
+                hi = mid
+            else:
+                lo = mid
+        change = (lo - rating[item]) / 2
+        pos += 1
+        changeRating.append(int(change))
+    addToDatabaseTOPH(root, li,rating, changeRating, name, url, div, man)
+    return
+
+
+def processStandingToph(li):
+    processedStanding = []
+    #li =  han, stid, solved, tp
+    position = 1
+    print(li)
+    for item in li:
+        conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+        cur = conn.cursor()
+        statement = 'select overall_rating  from current_rating  where userid = \'' + item[0] + '\''
+        cur.execute(statement)
+        rs = cur.fetchall()
+        print(rs[0][0])
+        processedStanding.append((item[1], item[0], item[2], item[3], rs[0][0]))
+        conn.close()
+    processedStanding.sort(key=lambda x: (x[2], -x[3], -x[4]), reverse=True)
+    finalList = []
+    for items in processedStanding:
+        print(items)
+        finalList.append((position,items[0],items[2],items[3],items[4]))
+        position += 1
+    print(finalList)
+    return processedStanding
+
+
+
+
+def getContestStatus(url, name, plat, div, man):
+    if plat == 'toph':
+        li = getStandingToph(name,url,div,man)
+        if(type(li)!=list):
+            print("NOT REACHABLE")
+        else:
+            li = processStandingToph(li)
+            root = Tk()
+            root.geometry('1200x790')
+            Label(root, text='Temporary Point Table', fg='red').place(x=500, y=70)
+            tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+            tv.heading(1, text='Position')
+            tv.heading(2, text='Student ID')
+            tv.heading(3, text='Handle')
+            tv.heading(4, text='Solved')
+            tv.heading(5, text='Time Penalty')
+            poos = 1
+            for item in li:
+                tv.insert("", "end", values=(poos, item[0], item[1], item[2], item[3]))
+                poos = poos + 1
+            tv.place(x=150, y=180)
+            Button(root, text='Create Ranking and Save', fg='red', bg='grey',
+                   command=lambda: addToRanklistForTOPH(root, li, name, url, div, man)).place(x=270, y=740)
+            root.mainloop()
+        #li is a dictionary that returns handle, sid, solved, timepenalty
+    elif plat == 'codeforces':
         li = CFStandingFetcher.getStanding(url, name, div, man)
         print(li)
         root = Tk()
@@ -351,4 +479,4 @@ def getContestStatus(name, url, plat, div, man):
 
 
 if __name__ == '__main__':
-    getContestStatus('ncpc selection contest', 'https://vjudge.net/contest/315373#rank', 'vjudge', 0, 0)
+    getContestStatus('Toph1', 'criterion-2020-round-3', 'toph', 0, 0)

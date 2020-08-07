@@ -5,7 +5,7 @@ import welcomepage
 import RatingFetcherFromCodeforces
 import VerifyAndAddContest
 
-
+#Pranon
 def addAdmin(root, uid, uname, pwd):
     new = Tk()
     new.geometry('250x250')
@@ -24,7 +24,7 @@ def addAdmin(root, uid, uname, pwd):
     print(stmt)
     conn.close()
 
-
+#RIZVI
 def addNewAdmin(root):
     root.destroy()
     root = Tk()
@@ -51,7 +51,7 @@ def addNewAdmin(root):
     Button(root, text='Go Back', width=20, bg='brown', fg='white', command=lambda: adminWelcomePage(root)).place(x=280,
                                                                                                                  y=380)
 
-
+#PRANON
 def approveStudent(root, sid, flag):
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
@@ -68,8 +68,9 @@ def approveStudent(root, sid, flag):
             pwd = rs[0][2]
             vj = rs[0][3]
             cf = rs[0][4]
-            insertStmt = 'insert into user_info values(\'' + sid + '\',\'' + uname + '\',\'' + pwd + '\',0)'  # + vj + '\',\'' + cf + '\')'
-            insertStmt2 = 'insert into handle_info values(\'' + sid + '\',\'' + cf + '\',\'' + vj + '\',2)'
+            toph = rs[0][5]
+            insertStmt = 'insert into user_info values(\'' + sid + '\',\'' + uname + '\',\'' + pwd + '\',0)'
+            insertStmt2 = 'insert into handle_info values(\'' + sid + '\',\'' + cf + '\',\'' + vj + '\' , \'' + toph + '\',2)'
             print(insertStmt2)
             print(insertStmt)
             rating = RatingFetcherFromCodeforces.cfRating(cf)
@@ -93,7 +94,7 @@ def approveStudent(root, sid, flag):
         Label(root, text=sid + ' was deleted', fg='red', font='bold,15').place(x=450, y=650)
     approvePendingRequest(root)
 
-
+#RIZVI
 def approvePendingRequest(root):
     root.destroy()
     root = Tk()
@@ -110,11 +111,12 @@ def approvePendingRequest(root):
     b1.place(x=550, y=140)
     b2.place(x=700, y=140)
     b3.place(x=850, y=140)
-    tv = Treeview(root, columns=(1, 2, 3, 4), show="headings", height='20')
+    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
     tv.heading(1, text='Student ID')
     tv.heading(2, text='Name')
     tv.heading(3, text='Vjudge Handle')
     tv.heading(4, text='Codeforces Handle')
+    tv.heading(5, text='Toph Handle')
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
     stmt = 'select * from pending_req'
@@ -125,10 +127,11 @@ def approvePendingRequest(root):
         un = row[1]
         vj = row[3]
         cf = row[4]
-        tv.insert("", "end", values=(sid, un, vj, cf))
+        toph = row[5]
+        tv.insert("", "end", values=(sid, un, vj, cf,toph))
     tv.place(x=180, y=180)
 
-
+#RIZVI
 def showAllStudentRanking(root):
     root.destroy()
     root = Tk()
@@ -155,13 +158,13 @@ def showAllStudentRanking(root):
     tv.place(x=240, y=180)
     Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
 
-
+#PRANON
 def verifyNewCon(root, name, url, plat, div, man):
     root.destroy()
     p = VerifyAndAddContest.getContestStatus(name, url, plat, div, man)
     # adminWelcomePage(root)
 
-
+#RIZVI
 def addNewContest(root):
     root.destroy()
     root = Tk()
@@ -185,22 +188,23 @@ def addNewContest(root):
     Label(root, text='Platform:', width=20, font=('bold', 10)).place(x=63, y=210)
     Radiobutton(root, text='codeforces', variable=platform, value='codeforces').place(x=120, y=230)
     Radiobutton(root, text='vjudge', variable=platform, value='vjudge').place(x=120, y=250)
+    Radiobutton(root, text='toph', variable=platform, value='toph').place(x=120, y=270)
 
     div = IntVar()
-    Label(root, text='Division:', width=20, font=('bold', 10)).place(x=63, y=270)
-    Radiobutton(root, text='Div 1+2', variable=div, value=0).place(x=120, y=290)
-    Radiobutton(root, text='Div 1', variable=div, value=1).place(x=120, y=310)
-    Radiobutton(root, text='Div 2', variable=div, value=2).place(x=120, y=330)
+    Label(root, text='Division:', width=20, font=('bold', 10)).place(x=63, y=290)
+    Radiobutton(root, text='Div 1+2', variable=div, value=0).place(x=120, y=310)
+    Radiobutton(root, text='Div 1', variable=div, value=1).place(x=120, y=330)
+    Radiobutton(root, text='Div 2', variable=div, value=2).place(x=120, y=350)
 
     man = IntVar()
-    Label(root, text='Mandatory:', width=20, font=('bold', 10)).place(x=63, y=350)
-    Radiobutton(root, text='Yes', variable=man, value=0).place(x=120, y=370)
-    Radiobutton(root, text='No 1', variable=man, value=1).place(x=120, y=390)
+    Label(root, text='Mandatory:', width=20, font=('bold', 10)).place(x=63, y=370)
+    Radiobutton(root, text='Yes', variable=man, value=0).place(x=120, y=390)
+    Radiobutton(root, text='No ', variable=man, value=1).place(x=120, y=410)
 
     Button(root, text='Fetch Result for Contest', fg='red', bg='grey',
            command=lambda: verifyNewCon(root, entry_1.get(), entry_2.get(), platform.get(), div.get(),
-                                        man.get())).place(x=240, y=440)
-
+                                        man.get())).place(x=240, y=460)
+#RIZVI
 def showRanklist(root,cid):
     root.destroy()
     root = Tk()
@@ -240,7 +244,7 @@ def showRanklist(root,cid):
 
     root.mainloop()
 
-
+#RIZVI
 def showPreviousContest(root):
     root.destroy()
     root = Tk()
@@ -271,7 +275,7 @@ def showPreviousContest(root):
 
     root.mainloop()
 
-
+#RIZVI
 def adminWelcomePage(root):
     root.destroy()
     root = Tk()

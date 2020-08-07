@@ -35,7 +35,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.main">
-    <configuration name="RatingFetcherFromCodeforces" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="TophStandingFetcher (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +48,29 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RatingFetcherFromCodeforces.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TophStandingFetcher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TophStandingFetcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IUTPCRatingSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="G:\Project\RDBMS\IUTPCRatingSystem\TophStandingFetcher.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -79,6 +101,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="adminhomepage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IUTPCRatingSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminhomepage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,50 +137,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="studenthomepage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IUTPCRatingSystem" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/studenthomepage.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="toph" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="IUTPCRatingSystem" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/toph.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,9 +171,9 @@
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.VerifyAndAddContest" />
-        <item itemvalue="Python.toph" />
-        <item itemvalue="Python.RatingFetcherFromCodeforces" />
-        <item itemvalue="Python.studenthomepage" />
+        <item itemvalue="Python.TophStandingFetcher (1)" />
+        <item itemvalue="Python.adminhomepage" />
+        <item itemvalue="Python.TophStandingFetcher" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +199,8 @@
       <workItem from="1595613500086" duration="1869000" />
       <workItem from="1595618347118" duration="342000" />
       <workItem from="1595618924327" duration="1292000" />
-      <workItem from="1596439109775" duration="522000" />
+      <workItem from="1596439109775" duration="8240000" />
+      <workItem from="1596466031080" duration="10849000" />
     </task>
     <servers />
   </component>
@@ -207,52 +208,56 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1982" y="205" key="#SQL_Dialects" timestamp="1596449609548">
+      <screen x="1920" y="0" width="1366" height="728" />
+    </state>
+    <state x="1982" y="205" key="#SQL_Dialects/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596449609548" />
     <state x="870" y="29" key="FileChooserDialogImpl" timestamp="1596439538114">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595613722708" />
     <state x="870" y="29" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439538114" />
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591228152364" />
-    <state width="1128" height="124" key="GridCell.Tab.0.bottom" timestamp="1596439194111">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state width="1611" height="147" key="GridCell.Tab.0.bottom" timestamp="1596476963038">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
-    <state width="1128" height="124" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="147" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
+    <state width="1128" height="89" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
     <state width="1611" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
-    <state width="1128" height="124" key="GridCell.Tab.0.center" timestamp="1596439194111">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state width="1611" height="147" key="GridCell.Tab.0.center" timestamp="1596476963038">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
-    <state width="1128" height="124" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="147" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
+    <state width="1128" height="89" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
     <state width="1611" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
-    <state width="1128" height="124" key="GridCell.Tab.0.left" timestamp="1596439194110">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state width="1611" height="147" key="GridCell.Tab.0.left" timestamp="1596476963038">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691119" />
-    <state width="1128" height="124" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194110" />
+    <state width="1611" height="147" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
+    <state width="1128" height="89" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
     <state width="1611" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
-    <state width="1128" height="124" key="GridCell.Tab.0.right" timestamp="1596439194111">
-      <screen x="1920" y="0" width="1366" height="728" />
+    <state width="1611" height="147" key="GridCell.Tab.0.right" timestamp="1596476963038">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618691120" />
-    <state width="1128" height="124" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439194111" />
+    <state width="1611" height="147" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
+    <state width="1128" height="89" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
     <state width="1611" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591228155684" />
-    <state width="1611" height="200" key="GridCell.Tab.1.bottom" timestamp="1595618020994">
+    <state width="1611" height="147" key="GridCell.Tab.1.bottom" timestamp="1596468713024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020994" />
-    <state width="1611" height="200" key="GridCell.Tab.1.center" timestamp="1595618020993">
+    <state width="1611" height="147" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596468713024" />
+    <state width="1611" height="147" key="GridCell.Tab.1.center" timestamp="1596468713023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020993" />
-    <state width="1611" height="200" key="GridCell.Tab.1.left" timestamp="1595618020993">
+    <state width="1611" height="147" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596468713023" />
+    <state width="1611" height="147" key="GridCell.Tab.1.left" timestamp="1596468713023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020993" />
-    <state width="1611" height="200" key="GridCell.Tab.1.right" timestamp="1595618020994">
+    <state width="1611" height="147" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596468713023" />
+    <state width="1611" height="147" key="GridCell.Tab.1.right" timestamp="1596468713023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1611" height="200" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595618020994" />
+    <state width="1611" height="147" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596468713023" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1591125565284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -263,8 +268,10 @@
     <state x="623" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595587042998" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1596439186897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1596476877729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/IUTPCRatingSystem$toph.coverage" NAME="toph Coverage Results" MODIFIED="1595588564519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$VerifyAndAddContest.coverage" NAME="VerifyAndAddContest Coverage Results" MODIFIED="1595618428800" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$adminhomepage.coverage" NAME="adminhomepage Coverage Results" MODIFIED="1596452304046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$VerifyAndAddContest.coverage" NAME="VerifyAndAddContest Coverage Results" MODIFIED="1596476749582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$TophStandingFetcher__1_.coverage" NAME="TophStandingFetcher (1) Coverage Results" MODIFIED="1596469964617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

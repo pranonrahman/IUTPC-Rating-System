@@ -3,6 +3,10 @@ conn iutpc/iutpcadmin
 --username iutpc 
 --password iutpcadmin@123
 --admin access 1
+
+insert into user_info values('admin','iutpcadmin','iutpcadmin',1);
+
+
 CREATE TABLE USER_INFO(
 	USERID VARCHAR2(20 CHAR) PRIMARY KEY,
 	NAME VARCHAR2(40 CHAR) NOT NULL,
@@ -26,14 +30,21 @@ CREATE TABLE DIVISION_INFO( -- 0 MEANS FOR ALL --1 MEANS FOR DIV 1 --2 MEANS FOR
 	HIGHEST_RANK NUMBER NOT NULL
 );
 
-insert into DIVISION_INFO VALUES(1,1600,3000);
+insert into DIVISION_INFO VALUES(1,1600,8000);
 insert into DIVISION_INFO VALUES(2,0,1599);
+insert into DIVISION_INFO VALUES(0,0,8000);
 
 
 CREATE TABLE PLATFORM_INFO(
 	PLATFORM VARCHAR2(40 CHAR) PRIMARY KEY,
 	PLATFORM_HOME_URL VARCHAR2(40 CHAR) NOT NULL
 );
+
+INSERT INTO PLATFORM_INFO VALUES('vjudge','https://vjudge.com');
+INSERT INTO PLATFORM_INFO VALUES('codeforces','https://codeforces.com');
+INSERT INTO PLATFORM_INFO VALUES('toph','https://toph.co');
+
+
 
 CREATE TABLE HANDLE_INFO(
 	USERID VARCHAR2(20 CHAR) PRIMARY KEY,

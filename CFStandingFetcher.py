@@ -8,6 +8,7 @@ def fetchStanding(url, li, man):
     print(cid)
     rat = {}
     for row in li:
+        print(row[0],row[1])
         rat[row[0]]=row[1]
     print(rat)
     url = 'https://codeforces.com/api/contest.standings?contestId=' + str(cid) + '&showUnfficial=false&handles='
@@ -23,8 +24,12 @@ def fetchStanding(url, li, man):
     createStandList=[]
     for row in response:
         #print(row['party']['members'][0]['handle'], row['points'])
-        createStandList.append(((row['party']['members'][0]['handle']).lower(), row['points'],0, rat[(row['party']['members'][0]['handle']).lower()]))
-        participated[(row['party']['members'][0]['handle']).lower()] = 1
+        #print(row['party']['members'][0]['handle'],row['points'],0,rat[(row['party']['members'][0]['handle'])])
+        try:
+            createStandList.append((row['party']['members'][0]['handle'], row['points'],0, rat[row['party']['members'][0]['handle']]))
+            participated[(row['party']['members'][0]['handle']).lower()] = 1
+        except KeyError:
+            continue
     if man == 0:
         for row in li:
             try:
@@ -67,4 +72,4 @@ def getStanding(url, name, div, man):
 
 
 if __name__ == '__main__':
-    getStanding('https://codeforces.com/contest/1333','Codeforces Round# 632', 0, 0)
+    getStanding('https://codeforces.com/contest/1391','Codeforces Round# 632', 0, 0)

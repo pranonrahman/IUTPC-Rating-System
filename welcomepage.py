@@ -11,7 +11,7 @@ def click(new):
     new.destroy()
     return
 
-#PRANON
+
 def doRegistration(root, sid, name, pwd, vj, cf, toph):
     print(sid, name, pwd, vj, cf)
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
@@ -26,24 +26,36 @@ def doRegistration(root, sid, name, pwd, vj, cf, toph):
         print(stmt)
         rating = RatingFetcherFromCodeforces.cfRating(cf)
         if rating == -1:
-            Label(root, text='Provide CF Rating Properly').place(x=240, y=420)
+            MessageBox = Tk()
+            MessageBox.geometry('500x500')
+            MessageBox.resizable(FALSE, FALSE)
+            MessageBox.title("Error Box")
+            Label(MessageBox, text='Provide CF Handle Properly').place(x=240, y=300)
             startpage(root)
         else:
             try:
                 cur.execute(stmt)
             except Cx.IntegrityError:
-                Label(root, text='You already have a request pending, ask admin to solve it').place(x=240, y=420)
+                MessageBox = Tk()
+                MessageBox.geometry('500x500')
+                MessageBox.resizable(FALSE, FALSE)
+                MessageBox.title("Error Box")
+                Label(MessageBox, text='You have already registered').place(x=240, y=300)
                 startpage(root)
             else:
                 conn.commit()
-                Label(root, text='Request Added, Wait for Approval').place(x=240, y=420)
+                MessageBox = Tk()
+                MessageBox.geometry('500x500')
+                MessageBox.resizable(FALSE, FALSE)
+                MessageBox.title("Error Box")
+                Label(MessageBox, text='Added Properly').place(x=240, y=300)
                 startpage(root)
     else:
         print('already have this!')
         Label(root, text='Student ID is already registered').place(x=240, y=420)
         startpage(root)
 
-#RIZVI
+
 def login(root, sid, pwd):
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
@@ -83,7 +95,7 @@ def login(root, sid, pwd):
             startpage(root)
     new.mainloop()
 
-#RIZVI
+
 def registration(root):
     root.destroy()
     root = Tk()
@@ -125,8 +137,6 @@ def registration(root):
 
     root.mainloop()
 
-# margin left 50%
-# loginpage
 
 def loginpage(root):
     root.destroy()
@@ -136,7 +146,7 @@ def loginpage(root):
     root.title("Login Form")
     label_0 = Label(root, text="Login form", width=20, fg='Red', font=("bold", 20))
     label_0.place(x=90, y=53)
-    label_1 = Label(root, text="Student ID", width=20, font=("bold", 10))
+    label_1 = Label(root, text="User ID", width=20, font=("bold", 10))
     label_1.place(x=80, y=130)
     entry_1 = Entry(root)
     entry_1.place(x=240, y=130)
@@ -149,8 +159,7 @@ def loginpage(root):
     Button(root, text='Go Back', width=20, bg='brown', fg='white', command=lambda: startpage(root)).place(x=270, y=380)
     root.mainloop()
 
-#RIZVI
-# welcome page
+
 def startpage(root):
     root.destroy()
     root = Tk()

@@ -18,10 +18,12 @@ def returnFunction(tup):
 
 
 def vjudgeverify(url):
-    print(url)
+
     # root.mainloop()
     driver = webdriver.Firefox(executable_path="D:\\Setup Files\\chromedriver_win32\\geckodriver.exe")
-    driver.get(url + '#rank')
+    Url = url + '#rank'
+    print(Url)
+    driver.get(Url)
     res = driver.execute_script("return document.documentElement.outerHTML;")
     soup = bs.BeautifulSoup(res, 'lxml')
     driver.quit()
@@ -398,7 +400,7 @@ def getContestStatus(url, name, plat, div, man):
             root.mainloop()
         #li is a dictionary that returns handle, sid, solved, timepenalty
     elif plat == 'codeforces':
-        li = CFStandingFetcher.getStanding(url, name, div, man)
+        li = CFStandingFetcher.getStanding(name,url , div, man)
         print(li)
         root = Tk()
         root.geometry('1200x790')
@@ -419,7 +421,7 @@ def getContestStatus(url, name, plat, div, man):
         root.mainloop()
 
     else:
-        li = vjudgeverify(url)
+        li = vjudgeverify(name)
         print(li)
         root = Tk()
         root.geometry('1200x790')
@@ -479,4 +481,4 @@ def getContestStatus(url, name, plat, div, man):
 
 
 if __name__ == '__main__':
-    getContestStatus('Toph1', 'criterion-2020-round-3', 'toph', 0, 0)
+    getContestStatus('https://vjudge.net/contest/354497', '.', 'vjudge', 0, 0)

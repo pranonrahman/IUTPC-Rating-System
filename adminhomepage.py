@@ -5,6 +5,7 @@ import welcomepage
 import RatingFetcherFromCodeforces
 import VerifyAndAddContest
 import tkinter.font as fonts
+import tkinter.ttk as ttk
 
 # Pranon
 def addAdmin(root, uid, uname, pwd):
@@ -30,7 +31,7 @@ def addAdmin(root, uid, uname, pwd):
 def addNewAdmin(root):
     root.destroy()
     root = Tk()
-    root.geometry('500x500')
+    root.geometry('500x450')
     root.resizable(FALSE, FALSE)
     root.title('Add New Admin')
     myFont = fonts.Font(family='Georgia',size=16)
@@ -107,19 +108,30 @@ def approvePendingRequest(root):
     root.title('pending request')
     root.geometry('1200x750')
     root.resizable(FALSE, FALSE)
-    myFont = fonts.Font(family='Georgia',size=16)
+
+    myFont = fonts.Font(family='Georgia',size=14)
     headerFont = fonts.Font(family='Century Schoolbook',size=26)
-    Label(root, text='Pending Approval', fg='red', font=('bold', 20)).place(x=470, y=100)
-    entry1 = Entry(root, width=50)
-    b1 = Button(root, text='Authorize', fg='red', width=20, command=lambda: approveStudent(root, entry1.get(), 0))
-    b2 = Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root))
-    b3 = Button(root, text='Delete Request', fg='white', bg='grey', width=20,
+    insertFont = fonts.Font(family='Century Schoolbook',size=9)
+
+
+    Label(root, text='Pending Approval', fg='red', font=(headerFont)).place(x=470, y=50)
+    entry1 = Entry(root, width=28 ,font = myFont, justify=CENTER, border=3)
+    b1 = Button(root, text='Authorize', fg='red', bg='#c7c7c7', width=20, font = myFont, padx=0, pady=0, justify=CENTER,
+                command=lambda: approveStudent(root, entry1.get(), 0))
+    b2 = Button(root, text='Go Back', fg='white', bg='black', width=30, font= myFont, padx=0, pady=0, justify=CENTER,
+                command=lambda: adminWelcomePage(root))
+    b3 = Button(root, text='Delete Request', fg='black', bg='#c7c7c7', width=20, font= myFont, padx=0, pady=0, justify=CENTER,
                 command=lambda: approveStudent(root, entry1.get(), 1))
-    entry1.place(x=250, y=140)
-    b1.place(x=550, y=140)
-    b2.place(x=700, y=140)
-    b3.place(x=850, y=140)
-    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+    entry1.place(x=220, y=130)
+    b1.place(x=590, y=125)
+    b2.place(x=450, y=650)
+    b3.place(x=830, y=125)
+    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='12')
+
+    style = ttk.Style()
+    style.configure("Treeview", font=myFont, rowheight=30, bg ='#c6c6c6', relief='flat')
+    style.configure("Treeview.Heading", font=insertFont, bg='#c6c6c6')
+
     tv.heading(1, text='Student ID')
     tv.heading(2, text='Name')
     tv.heading(3, text='Vjudge Handle')
@@ -136,8 +148,8 @@ def approvePendingRequest(root):
         vj = row[3]
         cf = row[4]
         toph = row[5]
-        tv.insert("", "end", values=(sid, un, vj, cf, toph))
-    tv.place(x=180, y=180)
+        tv.insert("", "end", values=(sid, un, vj, cf, toph), tags=("red"))
+    tv.place(x=110, y=200)
 
 
 # RIZVI
@@ -145,10 +157,17 @@ def showAllStudentRanking(root):
     root.destroy()
     root = Tk()
     root.geometry('1250x790')
-    myFont = fonts.Font(family='Georgia',size=16)
-    headerFont = fonts.Font(family='Century Schoolbook',size=26)
-    Label(root, text='Student Rating (Descending Order)', fg='red', font=('bold', 20)).place(x=440, y=50)
-    tv = Treeview(root, columns=(1, 2, 3, 4), show="headings", height='20')
+    myFont = fonts.Font(family='Georgia',size=14)
+    headerFont = fonts.Font(family='Century Schoolbook',size=30)
+    insertFont = fonts.Font(family='Century Schoolbook',size=9)
+
+    Label(root, text='Student Rating (Descending Order)', fg='red', font=headerFont).place(x=320, y=50)
+    tv = Treeview(root, columns=(1, 2, 3, 4), show="headings", height='15')
+
+    style = ttk.Style()
+    style.configure("Treeview", font=myFont, rowheight=30, bg ='#c6c6c6', relief='flat')
+    style.configure("Treeview.Heading", font=insertFont, bg='#c6c6c6')
+
     tv.heading(1, text='Rank Number')
     tv.heading(2, text='Student ID')
     tv.heading(3, text='Codeforces Rating')
@@ -167,7 +186,7 @@ def showAllStudentRanking(root):
         tv.insert("", "end", values=(sid, un, vj, cf))
         curr += 1
     tv.place(x=240, y=180)
-    Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
+    Button(root, text='Go Back', fg='white', bg='black', width=20, font=myFont, command=lambda: adminWelcomePage(root)).place(x=515, y=720)
 
 
 # PRANON

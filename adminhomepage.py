@@ -200,44 +200,51 @@ def verifyNewCon(root, name, url, plat, div, man):
 def addNewContest(root):
     root.destroy()
     root = Tk()
-    root.geometry('500x500')
+    root.geometry('500x580')
     root.resizable(FALSE, FALSE)
-    myFont = fonts.Font(family='Georgia',size=16)
-    headerFont = fonts.Font(family='Century Schoolbook',size=26)
+
+    myFont = fonts.Font(family='Georgia', size=14)
+    headerFont = fonts.Font(family='Century Schoolbook', size=26)
+
     root.title("Add New Contest")
-    label_0 = Label(root, text="Add New Contest", width=20, fg='Red', font=("bold", 20))
-    label_0.place(x=90, y=53)
 
-    label_1 = Label(root, text="Contest Name: ", width=20, font=("bold", 10))
-    label_1.place(x=80, y=130)
-    entry_1 = Entry(root, width=40)
-    entry_1.place(x=210, y=130)
+    label_0 = Label(root, text="Add New Contest", width=20, fg='Red', font=(headerFont))
+    label_0.place(x=40, y=53)
 
-    label_2 = Label(root, text="Contest URL: ", width=20, font=("bold", 10))
-    label_2.place(x=80, y=180)
-    entry_2 = Entry(root, width=40)
-    entry_2.place(x=210, y=180)
+    label_1 = Label(root, text="Contest Name: ", width=20, font=(myFont))
+    label_1.place(x=-25, y=130)
+    entry_1 = Entry(root, width=25, font = myFont, border=3)
+    entry_1.place(x=150, y=130)
+
+    label_2 = Label(root, text="Contest URL: ", width=20, font=(myFont))
+    label_2.place(x=-20, y=180)
+    entry_2 = Entry(root, width=25, font=myFont, border=3)
+    entry_2.place(x=150, y=180)
 
     platform = StringVar()
-    Label(root, text='Platform:', width=20, font=('bold', 10)).place(x=63, y=210)
-    Radiobutton(root, text='codeforces', variable=platform, value='codeforces').place(x=120, y=230)
-    Radiobutton(root, text='vjudge', variable=platform, value='vjudge').place(x=120, y=250)
-    Radiobutton(root, text='toph', variable=platform, value='toph').place(x=120, y=270)
+    Label(root, text='Platform:', width=20, font=myFont).place(x=-10, y=230)
+    Radiobutton(root, text='codeforces', variable=platform, value='codeforces', font=myFont).place(x=70, y=260)
+    Radiobutton(root, text='vjudge', variable=platform, value='vjudge', font=myFont).place(x=70, y=290)
+    Radiobutton(root, text='toph', variable=platform, value='toph', font=myFont).place(x=70, y=320)
 
     div = IntVar()
-    Label(root, text='Division:', width=20, font=('bold', 10)).place(x=63, y=290)
-    Radiobutton(root, text='Div 1+2', variable=div, value=0).place(x=120, y=310)
-    Radiobutton(root, text='Div 1', variable=div, value=1).place(x=120, y=330)
-    Radiobutton(root, text='Div 2', variable=div, value=2).place(x=120, y=350)
+    Label(root, text='Division:', width=20, font=myFont).place(x=200, y=230)
+    Radiobutton(root, text='Div 1+2', variable=div, value=0, font=myFont).place(x=280, y=260)
+    Radiobutton(root, text='Div 1', variable=div, value=1, font=myFont).place(x=280, y=290)
+    Radiobutton(root, text='Div 2', variable=div, value=2, font=myFont).place(x=280, y=320)
 
     man = IntVar()
-    Label(root, text='Mandatory:', width=20, font=('bold', 10)).place(x=63, y=370)
-    Radiobutton(root, text='Yes', variable=man, value=0).place(x=120, y=390)
-    Radiobutton(root, text='No ', variable=man, value=1).place(x=120, y=410)
+    Label(root, text='Mandatory:', width=20, font=myFont).place(x=-10, y=350)
+    Radiobutton(root, text='Yes', variable=man, value=0, font=myFont).place(x=70, y=380)
+    Radiobutton(root, text='No ', variable=man, value=1, font=myFont).place(x=70, y=410)
 
-    Button(root, text='Fetch Result for Contest', fg='red', bg='grey',
+    fetchResultButton = Button(root, text='Fetch Result for Contest', fg='red', bg='grey',  font=myFont,
            command=lambda: verifyNewCon(root, entry_1.get(), entry_2.get(), platform.get(), div.get(),
-                                        man.get())).place(x=240, y=460)
+                                        man.get()))
+    goBackButton = Button(root, text='Go Back', fg='white', bg='black', font=myFont,
+           command=lambda: adminWelcomePage(root))
+    fetchResultButton.place(x=80, y=480)
+    goBackButton.place(x=320, y=480)
 
 
 # RIZVI
@@ -245,11 +252,18 @@ def showRanklist(root, cid):
     root.destroy()
     root = Tk()
     root.geometry('1400x790')
-    myFont = fonts.Font(family='Georgia',size=16)
-    headerFont = fonts.Font(family='Century Schoolbook',size=26)
+    myFont = fonts.Font(family='Georgia', size=16)
+    headerFont = fonts.Font(family='Century Schoolbook', size=30)
+    insertFont = fonts.Font(family='Century Schoolbook', size=12)
     root.title('Contest Ranklist')
-    Label(root, text='Contest Ranklist', fg='red', font=('bold', 20)).place(x=440, y=50)
-    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+    Label(root, text='Contest Ranklist', fg='red', font=headerFont).place(x=500, y=50)
+
+    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='15')
+
+    style = ttk.Style()
+    style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat', width=80)
+    style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
     tv.heading(1, text='Position')
     tv.heading(2, text='Student ID')
     tv.heading(3, text='Solved')
@@ -277,8 +291,9 @@ def showRanklist(root, cid):
         rj = item[4]
         tv.insert("", "end", values=(curr, un, vj, cf, rj))
         curr += 1
-    tv.place(x=240, y=180)
-    Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
+    tv.place(x=200, y=180)
+    Button(root, text='Go Back', fg='white', bg='black', width=20, font=myFont,
+           command=lambda: showPreviousContest(root)).place(x=540, y=700)
 
     root.mainloop()
 
@@ -287,19 +302,28 @@ def showRanklist(root, cid):
 def showPreviousContest(root):
     root.destroy()
     root = Tk()
-    root.geometry('1200x790')
+    root.geometry('860x790')
     myFont = fonts.Font(family='Georgia',size=16)
     headerFont = fonts.Font(family='Century Schoolbook',size=26)
+    insertFont = fonts.Font(family='Century Schoolbook', size=12)
     root.title('Previous Contest')
-    Label(root, text='Previous Contest', fg='red', font=('bold', 20)).place(x=440, y=50)
-    entry1 = Entry(root, width=50)
-    b1 = Button(root, text='Show Ranklist', fg='red', width=20, command=lambda: showRanklist(root, entry1.get()))
-    entry1.place(x=250, y=140)
-    b1.place(x=550, y=140)
-    tv = Treeview(root, columns=(1, 2, 3), show="headings", height='20')
+    Label(root, text='Previous Contest', fg='red', font=headerFont).place(x=320, y=50)
+    entry1 = Entry(root, width=20, font=myFont, border=5, justify=CENTER)
+    b1 = Button(root, text='Show Ranklist', fg='red', bg='#c6c6c6',width=13, font=myFont, border=5,
+                command=lambda: showRanklist(root, entry1.get()))
+    entry1.place(x=190, y=140)
+    b1.place(x=480, y=133)
+
+    tv = Treeview(root, columns=(1, 2, 3), show="headings", height=15)
+
+    style = ttk.Style()
+    style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat',width=80)
+    style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
     tv.heading(1, text='Contest ID')
     tv.heading(2, text='Contest Name')
     tv.heading(3, text='Contest URL')
+
     conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
     cur = conn.cursor()
     stmt = 'select contest_id,contest_name,contest_url from contest_info'
@@ -308,13 +332,55 @@ def showPreviousContest(root):
     curr = 1
     for row in rs:
         un = row[0]
-        vj = row[1]
-        cf = row[2]
+        vj = row[2]
+        cf = row[1]
         tv.insert("", "end", values=(un, vj, cf))
-    tv.place(x=240, y=180)
-    Button(root, text='Go Back', fg='red', width=20, command=lambda: adminWelcomePage(root)).place(x=540, y=720)
+    tv.place(x=120, y=200)
+    Button(root, text='Go Back', fg='white', bg='black', width=30, font=myFont,
+           command=lambda: adminWelcomePage(root)).place(x=240, y=720)
 
     root.mainloop()
+
+
+def ShowStudentDetails(root):
+    root.destroy()
+    root = Tk()
+    myFont = fonts.Font(family='Georgia', size=16)
+    headerFont = fonts.Font(family='Century Schoolbook', size=30)
+    insertFont = fonts.Font(family='Century Schoolbook', size=12)
+    root.title('Student List')
+    root.geometry('1200x750')
+    root.resizable(FALSE, FALSE)
+    Label(root, text='Student List', fg='red', font=headerFont).place(x=475, y=70)
+    b2 = Button(root, text='Go Back', fg='white', bg='black', width=20, font=myFont,
+                command=lambda: adminWelcomePage(root))
+    b2.place(x=460, y=680)
+
+    tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='15')
+
+    style = ttk.Style()
+    style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat', width=80)
+    style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
+    tv.heading(1, text='Student ID')
+    tv.heading(2, text='Name')
+    tv.heading(3, text='Vjudge Handle')
+    tv.heading(4, text='Codeforces Handle')
+    tv.heading(5, text='Rating')
+    conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
+    cur = conn.cursor()
+    stmt = 'select user_info.userid,user_info.name, handle_info.vjudge_handle, handle_info.cf_handle, current_rating.overall_rating from user_info, handle_info,current_rating where user_info.adminaccess=0 and user_info.userid = handle_info.userid and current_rating.userid = user_info.userid order by current_rating.overall_rating desc'
+    cur.execute(stmt)
+    rs = cur.fetchall()
+    for row in rs:
+        SID = row[0]
+        un = row[1]
+        vj = row[2]
+        cf = row[3]
+        rat = row[4]
+        tv.insert("", "end", values=(SID, un, vj, cf, rat))
+    tv.place(x=100, y=160)
+    return
 
 
 # RIZVI
@@ -323,7 +389,7 @@ def adminWelcomePage(root):
     root = Tk()
     myFont = fonts.Font(family='Georgia',size=16)
     headerFont = fonts.Font(family='Century Schoolbook',size=26)
-    root.geometry('850x780')
+    root.geometry('850x880')
     Label(root, text='Welcome to IUTPC Rating System', fg='red', font=(headerFont)).place(x=158, y=50)
     Button(root, text='Add Contest', width=40, height=2, fg='red', bg='#c7c7c7', borderwidth=5,font=myFont, padx=0, pady=0, justify = CENTER,
            command=lambda: addNewContest(root)).place(x=180, y=150)
@@ -335,8 +401,11 @@ def adminWelcomePage(root):
            command=lambda: approvePendingRequest(root)).place(x=180, y=450)
     Button(root, text='Add New Admin', width=40, height=2, fg='red',bg='#c7c7c7', borderwidth=5,font=(myFont), padx=0, pady=0, justify = CENTER,
            command=lambda: addNewAdmin(root)).place(x=180, y=550)
-    Button(root, text='Logout', width=40, height=2, fg='white',bg='black', borderwidth=5,font=(myFont), padx=0, pady=0, justify = CENTER,
-           command=lambda: welcomepage.startpage(root)).place(x=180, y=650)
+    Button(root, text='See Student Details', width=40, height=2, fg='red',bg='#c7c7c7', borderwidth=5, font=(myFont), padx=0,
+           pady=0, justify=CENTER,
+           command=lambda: welcomepage.ShowStudentDetails(root)).place(x=180, y=650)
+    Button(root, text='Logout', width=40, height=2,  borderwidth=5,font=(myFont), fg='white', bg='black', padx=0, pady=0, justify = CENTER,
+           command=lambda: welcomepage.startpage(root)).place(x=180, y=750)
     root.mainloop()
     return
 

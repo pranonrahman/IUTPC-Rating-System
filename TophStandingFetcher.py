@@ -45,12 +45,13 @@ def getStandingToph(contestName,name, div, man):
             if(currentHandle!=''):
                 tp = standings[currentHandle][0]
                 length = 0
-                if standings[currentHandle][1]!=0:
-                    length = (int(math.log(standings[currentHandle][1], 10))+1)
-                tp = int(tp[length:])
+                if standings[currentHandle][1] != 0:
+                    length = (int(float(math.log(standings[currentHandle][1], 10)))+1)
+                print(length)
+                tp = int(float(tp[int(float(length)):]))
                 standings[currentHandle][0] = tp
         final_list = []
-        for i in range(0,len(handles)):
+        for i in range(0, len(handles)):
             stid = sid[i]
             han = handles[i]
             print(han)

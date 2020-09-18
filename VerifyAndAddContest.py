@@ -9,6 +9,8 @@ import math
 import adminhomepage
 import CFStandingFetcher
 from TophStandingFetcher import *
+import tkinter.font as fonts
+import tkinter.ttk as ttk
 
 
 def returnFunction(tup):
@@ -375,6 +377,7 @@ def processStandingToph(li):
 
 
 def getContestStatus(url, name, plat, div, man):
+
     if plat == 'toph':
         li = getStandingToph(name,url,div,man)
         if(type(li)!=list):
@@ -383,8 +386,18 @@ def getContestStatus(url, name, plat, div, man):
             li = processStandingToph(li)
             root = Tk()
             root.geometry('1200x790')
-            Label(root, text='Temporary Point Table', fg='red').place(x=500, y=70)
-            tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+            myFont = fonts.Font(family='Georgia', size=16)
+            headerFont = fonts.Font(family='Century Schoolbook', size=20)
+            insertFont = fonts.Font(family='Century Schoolbook', size=12)
+
+            Label(root, text='Temporary Point Table', fg='red', font=headerFont).place(x=400, y=70)
+
+            tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='15')
+
+            style = ttk.Style()
+            style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat', width=80)
+            style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
             tv.heading(1, text='Position')
             tv.heading(2, text='Student ID')
             tv.heading(3, text='Handle')
@@ -395,8 +408,10 @@ def getContestStatus(url, name, plat, div, man):
                 tv.insert("", "end", values=(poos, item[0], item[1], item[2], item[3]))
                 poos = poos + 1
             tv.place(x=150, y=180)
-            Button(root, text='Create Ranking and Save', fg='red', bg='grey',
-                   command=lambda: addToRanklistForTOPH(root, li, name, url, div, man)).place(x=270, y=740)
+            Button(root, text='Create Ranking and Save', fg='red', bg='grey', font=myFont,
+                   command=lambda: addToRanklistForTOPH(root, li, name, url, div, man)).place(x=320, y=700)
+            Button(root, text='Discard and Go Back', fg='white', bg='black', font=myFont,
+                   command=lambda: adminhomepage.addNewContest(root)).place(x=600, y=700)
             root.mainloop()
         #li is a dictionary that returns handle, sid, solved, timepenalty
     elif plat == 'codeforces':
@@ -404,8 +419,16 @@ def getContestStatus(url, name, plat, div, man):
         print(li)
         root = Tk()
         root.geometry('1200x790')
-        Label(root, text='Temporary Point Table', fg='red').place(x=500, y=70)
-        tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+        myFont = fonts.Font(family='Georgia', size=16)
+        headerFont = fonts.Font(family='Century Schoolbook', size=20)
+        insertFont = fonts.Font(family='Century Schoolbook', size=12)
+
+        Label(root, text='Temporary Point Table', fg='red', font=headerFont).place(x=400, y=70)
+        tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='15')
+        style = ttk.Style()
+        style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat', width=80)
+        style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
         tv.heading(1, text='Position')
         tv.heading(2, text='Student ID')
         tv.heading(3, text='Handle')
@@ -416,8 +439,11 @@ def getContestStatus(url, name, plat, div, man):
             tv.insert("", "end", values=(poos, item[0], item[1], item[2], item[3]))
             poos = poos + 1
         tv.place(x=150, y=180)
-        Button(root, text='Create Ranking and Save', fg='red', bg='grey',
-               command=lambda: addToRanklistForCF(root, li, name, url, div, man)).place(x=270, y=740)
+        Button(root, text='Create Ranking and Save', fg='red', bg='grey', font=myFont,
+               command=lambda: addToRanklistForCF(root, li, name, url, div, man)).place(x=320, y=700)
+
+        Button(root, text='Discard and Go Back', fg='white', bg='black', font=myFont,
+               command=lambda: adminhomepage.addNewContest(root)).place(x=600, y=700)
         root.mainloop()
 
     else:
@@ -425,7 +451,12 @@ def getContestStatus(url, name, plat, div, man):
         print(li)
         root = Tk()
         root.geometry('1200x790')
-        Label(root, text='Temporary Point Table', fg='red').place(x=500, y=70)
+
+        myFont = fonts.Font(family='Georgia', size=16)
+        headerFont = fonts.Font(family='Century Schoolbook', size=20)
+        insertFont = fonts.Font(family='Century Schoolbook', size=12)
+
+        Label(root, text='Temporary Point Table', fg='red', font = headerFont).place(x=400, y=70)
         conn = Cx.connect('iutpc/iutpcadmin@localhost/orcl')
         cur = conn.cursor()
 
@@ -459,10 +490,18 @@ def getContestStatus(url, name, plat, div, man):
 
         lii.sort(key=lambda x: (x[0], -1 * x[1]), reverse=True)
         print(lii)
+
         # for item in lii:
         #     solv[item[2]] = item]['solved']
         #     tpp[item] = li[item]['time_pen']
-        tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='20')
+
+
+        tv = Treeview(root, columns=(1, 2, 3, 4, 5), show="headings", height='15')
+
+        style = ttk.Style()
+        style.configure("Treeview", font=insertFont, rowheight=30, bg='#c6c6c6', relief='flat', width=80)
+        style.configure("Treeview.Heading", font=myFont, bg='#c6c6c6')
+
         tv.heading(1, text='Position')
         tv.heading(2, text='Student ID')
         tv.heading(3, text='Handle')
@@ -472,13 +511,15 @@ def getContestStatus(url, name, plat, div, man):
         for item in lii:
             tv.insert("", "end", values=(poos, handleToStudentID[item[2]], item[2], item[0], item[1]))
             poos = poos + 1
-        tv.place(x=150, y=180)
-        Button(root, text='Create Ranking and Save', fg='red', bg='grey',
-               command=lambda: AddToRankList(root, lii, name, url, plat, div, man, handleToStudentID)).place(x=270,
-                                                                                                             y=740)
+        tv.place(x=100, y=180)
+
+        Button(root, text='Generate Rating and Save', fg='red', bg='#c6c6c6',font=myFont,
+               command=lambda: AddToRankList(root, lii, name, url, plat, div, man, handleToStudentID)).place(x=320,y=700)
+        Button(root, text='Discard and Go Back', fg='white', bg='black',font=myFont,
+               command=lambda: adminhomepage.addNewContest(root)).place(x=600,y=700)
         root.mainloop()
     return
 
 
 if __name__ == '__main__':
-    getContestStatus('https://vjudge.net/contest/354497', '.', 'vjudge', 0, 0)
+    getContestStatus('.', 'https://vjudge.net/contest/354497', 'vjudge', 0, 0)

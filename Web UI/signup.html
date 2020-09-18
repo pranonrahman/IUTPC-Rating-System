@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="css/style3.css">
+    <link href="https://fonts.googleapis.com/css?family=Economica&display=swap" rel="stylesheet">
+</head>
+<body class="b1">
+    <div class="register">
+        <h1 class="error"><%=erms%></h2>
+        <h1 class="header1">SignUp</h1>
+        <form action="/signup" id="signup" method="post">
+            <input class="txtbox name" type="text" name="name" placeholder="Name"><br> 
+            <input class="txtbox email" type="text" name="email" placeholder="Student_ID"><br>
+            <input class="txtbox userid" type="text" name="userid" placeholder="CF_Handle" autocomplete="off"><br>
+            <input class="txtbox dob" type="text" name="dob" placeholder="VJudge_Handle"><br>
+            <input class="txtbox password" type="text" name="password" placeholder="TOPH_Handle" autocomplete="off"><br>
+            <input class="txtbox confirm" type="password" name="cpassword" placeholder="password"><br>
+            <input class="subbox supbtn" type="submit" name="" value="Register"><br>
+        </form>
+        <p class="newAcc">
+            <a href='/login'>already have an account</a>
+        </p>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="js/loginsignup.js"></script>
+</body>
+</html>

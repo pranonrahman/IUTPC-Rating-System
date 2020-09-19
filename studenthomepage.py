@@ -2,7 +2,8 @@ from tkinter import *
 import cx_Oracle as Cx
 from welcomepage import *
 import welcomepage
-
+import tkinter.ttk
+import tkinter.font as fonts
 
 #
 # def showStudentInfo(root,sid):

@@ -34,7 +34,7 @@ def doRegistration(root, sid, name, pwd, vj, cf, toph):
             MessageBox.geometry('500x500')
             MessageBox.resizable(FALSE, FALSE)
             MessageBox.title("Error Box")
-            Label(MessageBox, text='Provide CF Handle Properly').place(x=240, y=300)
+            Label(MessageBox, text='Provide CF Handle Properly',font=myFont, fg='red').place(x=120, y=240)
             startpage(root)
         else:
             try:
@@ -44,7 +44,7 @@ def doRegistration(root, sid, name, pwd, vj, cf, toph):
                 MessageBox.geometry('500x500')
                 MessageBox.resizable(FALSE, FALSE)
                 MessageBox.title("Error Box")
-                Label(MessageBox, text='You have already registered').place(x=240, y=300)
+                Label(MessageBox, text='You have already registered',font=myFont, fg='red').place(x=120, y=200)
                 startpage(root)
             else:
                 conn.commit()
@@ -52,11 +52,15 @@ def doRegistration(root, sid, name, pwd, vj, cf, toph):
                 MessageBox.geometry('500x500')
                 MessageBox.resizable(FALSE, FALSE)
                 MessageBox.title("Error Box")
-                Label(MessageBox, text='Added Properly').place(x=240, y=300)
+                Label(MessageBox, text='Added Properly', font=myFont).place(x=180, y=240)
                 startpage(root)
     else:
         print('already have this!')
-        Label(root, text='Student ID is already registered').place(x=240, y=420)
+        MessageBox = Tk()
+        MessageBox.geometry('500x500')
+        MessageBox.resizable(FALSE, FALSE)
+        MessageBox.title("Error Box")
+        Label(MessageBox, text='You are already registered into the system',font=myFont, fg='red').place(x=60, y=200)
         startpage(root)
 
 
@@ -193,6 +197,6 @@ def startpage(root):
 # init welcome page
 if __name__ == "__main__":
     root = Tk()
-    registration(root)
+    startpage(root)
 
 # registrationpage

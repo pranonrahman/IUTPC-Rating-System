@@ -39,7 +39,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Python.adminhomepage">
+  <component name="RunManager" selected="Python.welcomepage">
     <configuration name="CFStandingFetcher" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="IUTPCRatingSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,6 +213,8 @@
       <workItem from="1600267449746" duration="5372000" />
       <workItem from="1600329198937" duration="1411000" />
       <workItem from="1600351031635" duration="20087000" />
+      <workItem from="1600461050802" duration="1607000" />
+      <workItem from="1600495251870" duration="594000" />
     </task>
     <servers />
   </component>
@@ -230,33 +232,33 @@
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1595613722708" />
     <state x="870" y="29" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596439538114" />
     <state x="870" y="29" key="FileChooserDialogImpl/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600351049750" />
-    <state width="905" height="111" key="GridCell.Tab.0.bottom" timestamp="1600372112421">
-      <screen x="1920" y="0" width="1366" height="738" />
+    <state width="1293" height="240" key="GridCell.Tab.0.bottom" timestamp="1600495862336">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1611" height="147" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
     <state width="1128" height="89" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
-    <state width="1293" height="310" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600362509993" />
+    <state width="1293" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600495862336" />
     <state width="905" height="111" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1366.738@1920.0.1366.738" timestamp="1600372112421" />
-    <state width="905" height="111" key="GridCell.Tab.0.center" timestamp="1600372112421">
-      <screen x="1920" y="0" width="1366" height="738" />
+    <state width="1293" height="240" key="GridCell.Tab.0.center" timestamp="1600495862336">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1611" height="147" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
     <state width="1128" height="89" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
-    <state width="1293" height="310" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600362509993" />
+    <state width="1293" height="240" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600495862336" />
     <state width="905" height="111" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1366.738@1920.0.1366.738" timestamp="1600372112421" />
-    <state width="905" height="111" key="GridCell.Tab.0.left" timestamp="1600372112421">
-      <screen x="1920" y="0" width="1366" height="738" />
+    <state width="1293" height="240" key="GridCell.Tab.0.left" timestamp="1600495862336">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1611" height="147" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
     <state width="1128" height="89" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
-    <state width="1293" height="310" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600362509993" />
+    <state width="1293" height="240" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600495862336" />
     <state width="905" height="111" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1366.738@1920.0.1366.738" timestamp="1600372112421" />
-    <state width="905" height="111" key="GridCell.Tab.0.right" timestamp="1600372112421">
-      <screen x="1920" y="0" width="1366" height="738" />
+    <state width="1293" height="240" key="GridCell.Tab.0.right" timestamp="1600495862336">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1611" height="147" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@0.0.1920.1040" timestamp="1596476963038" />
     <state width="1128" height="89" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1366.728@1920.0.1366.728" timestamp="1596452485933" />
-    <state width="1293" height="310" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600362509993" />
+    <state width="1293" height="240" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1366.738@0.0.1920.1050" timestamp="1600495862336" />
     <state width="905" height="111" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1366.738@1920.0.1366.738" timestamp="1600372112421" />
     <state width="905" height="111" key="GridCell.Tab.1.bottom" timestamp="1600370357923">
       <screen x="1920" y="0" width="1366" height="738" />
@@ -296,7 +298,7 @@
     <SUITE FILE_PATH="coverage/IUTPCRatingSystem$TophStandingFetcher__1_.coverage" NAME="TophStandingFetcher (1) Coverage Results" MODIFIED="1596469964617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IUTPC_Rating_System$CFStandingFetcher.coverage" NAME="CFStandingFetcher Coverage Results" MODIFIED="1600271789626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IUTPCRatingSystem$main.coverage" NAME="main Coverage Results" MODIFIED="1596476877729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$welcomepage.coverage" NAME="welcomepage Coverage Results" MODIFIED="1600368569607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IUTPCRatingSystem$welcomepage.coverage" NAME="welcomepage Coverage Results" MODIFIED="1600495849493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IUTPCRatingSystem$toph.coverage" NAME="toph Coverage Results" MODIFIED="1595588564519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/IUTPC_Rating_System$main.coverage" NAME="main Coverage Results" MODIFIED="1600181039773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/IUTPCRatingSystem$VerifyAndAddContest.coverage" NAME="VerifyAndAddContest Coverage Results" MODIFIED="1600365782550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

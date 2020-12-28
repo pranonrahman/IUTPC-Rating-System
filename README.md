@@ -23,4 +23,3 @@ Contributor of this project:
 Raian Rahman 
 Rizvi Hasan 
 Abdullah Al Farhad
-Shahriar Nur Nahin

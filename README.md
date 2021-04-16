@@ -19,15 +19,7 @@ Some of the core features are:
 Our project has two modules. Front end User Interface and backend web scraper and rating generator. These modules are explained below:
 
 ### User Interface
-Our user interface was designed using a python library named ```TKinter```. Tkinter is a hardcoded UI library. Some snapshot for our UI is given below:
-![Welcome Page](Images/1.PNG "Welcome Page")
-![Registration Page](Images/2.PNG "Registration Page")
-![Add Contest Page](Images/3.PNG "Add contest Page")
-![Temporary Ranklist Page](Images/4.PNG "Temporary ranklist Page")
-![Rating Page](Images/5.PNG "Rating Page")
-![Rating Page](Images/6.PNG "Rating Page")
-![Rating Page](Images/7.PNG "Rating Page")
-
+Our user interface was designed using a python library named ```TKinter```. Tkinter is a hardcoded UI library. 
 
 ### Backend
 In our backend, we used ```BeautifulSoup``` for webscraping and ```Cx_Oracle``` for storing data in Oracle Database. We also used ```Oracle Databse``` and ```plSQL``` for procedural SQL. 
@@ -42,6 +34,17 @@ In our backend, we used ```BeautifulSoup``` for webscraping and ```Cx_Oracle``` 
         python3 welcomepage.py
     ```
 Then the project will be up and running.
+
+## Screenshots
+Some snapshot for our UI is given below: <br>
+![Welcome Page](Images/1.PNG "Welcome Page")
+![Registration Page](Images/2.PNG "Registration Page")
+![Add Contest Page](Images/3.PNG "Add contest Page")
+![Temporary Ranklist Page](Images/4.png "Temporary ranklist Page")
+![1](Images/5.PNG "1")
+![12](Images/6.PNG "12")
+![123](Images/7.PNG "123")
+
 
 ## Contributor of this project:
 <ul>

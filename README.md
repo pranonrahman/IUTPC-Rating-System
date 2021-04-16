@@ -20,11 +20,14 @@ Our project has two modules. Front end User Interface and backend web scraper an
 
 ### User Interface
 Our user interface was designed using a python library named ```TKinter```. Tkinter is a hardcoded UI library. Some snapshot for our UI is given below:
-![Welcome Page](Images/1.png "Welcome Page")
-![Registration Page](Images/2.png "Registration Page")
-![Add Contest Page](Images/3.png "Add contest Page")
-![Temporary Ranklist Page](Images/4.png "Temporary ranklist Page")
-![Rating Page](Images/5.png "Rating Page")
+![Welcome Page](Images/1.PNG "Welcome Page")
+![Registration Page](Images/2.PNG "Registration Page")
+![Add Contest Page](Images/3.PNG "Add contest Page")
+![Temporary Ranklist Page](Images/4.PNG "Temporary ranklist Page")
+![Rating Page](Images/5.PNG "Rating Page")
+![Rating Page](Images/6.PNG "Rating Page")
+![Rating Page](Images/7.PNG "Rating Page")
+
 
 ### Backend
 In our backend, we used ```BeautifulSoup``` for webscraping and ```Cx_Oracle``` for storing data in Oracle Database. We also used ```Oracle Databse``` and ```plSQL``` for procedural SQL. 

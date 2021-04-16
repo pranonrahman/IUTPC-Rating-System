@@ -18,6 +18,7 @@ def fetchStanding(url, li, man):
     print(url)
     response = requests.get(url)
     response = json.loads(response.text)
+    print(type(response))
     response = response['result']['rows']
     #print(response)
     participated = {}
